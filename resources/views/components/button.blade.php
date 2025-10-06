@@ -1,5 +1,5 @@
 <a {{$attributes-> merge(["class"=>
-               "relative inline-flex items-center px-3 py-2 text-sm font-medium
+               "relative inline-flex items-center px-4 py-2 text-sm font-medium
                text-gray-700 bg-white border border-gray-200 rounded-full leading-5
                hover:bg-gray-50 hover:text-gray-600
                focus:z-10 focus:outline-none focus:ring ring-gray-200 focus:border-blue-300
