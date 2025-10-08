@@ -14,7 +14,7 @@ class Job extends Model
     protected $table = 'job_listings';
     protected $guarded = [];
 
-    public function employer()
+    public function employer(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Employer::class);
     }
