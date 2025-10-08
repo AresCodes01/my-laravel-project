@@ -3,19 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class JobController extends Controller
 {
     public function index()
     {
+        //orderBy("id", "asc") nach ID sortieren aufsteigend
         $jobs = Job::with("employer")->latest()->simplePaginate(4);
         return view('jobs/index', [
             'jobs' => $jobs]);
-    }
-
-    public function create()
-    {
-        return view('jobs.create');
     }
 
     public function show(Job $job)
@@ -37,6 +35,11 @@ class JobController extends Controller
             "employer_id" => 1
         ]);
         return redirect("/jobs");
+    }
+
+    public function create()
+    {
+        return view('jobs.create');
     }
 
     public function edit(Job $job)

@@ -9,11 +9,6 @@ use Illuminate\Validation\Rules\Password;
 
 class RegisteredUserController extends Controller
 {
-    public function create()
-    {
-        return view("auth.register");
-    }
-
     public function store()
     {
         $attributes = request()->validate([
@@ -27,6 +22,11 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
         return redirect("/jobs");
+    }
+
+    public function create()
+    {
+        return view("auth.register");
     }
 }
 //Ctrl + Alt + Shift + J
